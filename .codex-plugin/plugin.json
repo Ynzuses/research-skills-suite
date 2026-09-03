@@ -1,0 +1,42 @@
+{
+  "author": {
+    "name": "Ynzuses",
+    "url": "https://github.com/Ynzuses"
+  },
+  "description": "Evidence-traceable research workflows for workspace memory, literature review, scientific writing, document delivery, reproducible computation, complex genomics, and genotype-imputation benchmarking.",
+  "homepage": "https://github.com/Ynzuses/research-skills-suite",
+  "interface": {
+    "capabilities": [
+      "Research",
+      "Writing",
+      "Workflow"
+    ],
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Organize a durable research workspace.",
+      "Audit a literature review with traceable evidence.",
+      "Deliver a reproducible research artifact."
+    ],
+    "developerName": "Ynzuses",
+    "displayName": "Research Skills Suite",
+    "longDescription": "Evidence-traceable research workflows for workspace memory, literature review, scientific writing, document delivery, reproducible computation, complex genomics, and genotype-imputation benchmarking.",
+    "privacyPolicyURL": "https://github.com/Ynzuses/research-skills-suite/blob/main/PRIVACY.md",
+    "shortDescription": "Evidence-traceable research workflows for workspace memory, literature review, scientific writing, document delivery, reproducible computation, complex genomics, and genotype-imputation benchmarking.",
+    "termsOfServiceURL": "https://github.com/Ynzuses/research-skills-suite/blob/main/TERMS.md",
+    "websiteURL": "https://github.com/Ynzuses/research-skills-suite"
+  },
+  "keywords": [
+    "research",
+    "reproducibility",
+    "literature-review",
+    "scientific-writing",
+    "workflow",
+    "genomics",
+    "genotype-imputation"
+  ],
+  "license": "Apache-2.0",
+  "name": "research-skills-suite",
+  "repository": "https://github.com/Ynzuses/research-skills-suite",
+  "skills": "./skills/",
+  "version": "0.6.0"
+}

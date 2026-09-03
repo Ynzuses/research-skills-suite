@@ -1,0 +1,44 @@
+# Long-Term Workspace Memory
+
+> Role: stable cross-session entry and routing index. Current progress belongs in status files; detailed closed evidence belongs in audits or history.
+
+## Startup Route
+
+1. Applicable rules: `<relative-link>`
+2. Active workspace status: `<relative-link-or-routing-table>`
+3. Task-specific authorities: follow the table below.
+
+## Stable Workspace Rules and Lessons
+
+- `<durable rule or transferable lesson; include scope>`
+
+## Active Areas
+
+| Area ID | Purpose | Status entry | Stable design | Asset index | Topic memory | State |
+| --- | --- | --- | --- | --- | --- | --- |
+| `<id>` | `<purpose>` | `<link>` | `<link>` | `<link>` | `<link-or-none>` | `<active/paused/closed>` |
+
+## Task Routing
+
+| Task type | Read next | Authority supplied |
+| --- | --- | --- |
+| `<task>` | `<link>` | `<design/data/method/history/etc.>` |
+
+## Shared Authorities
+
+| Stable ID | Role | Authoritative location | Scope | Verification |
+| --- | --- | --- | --- | --- |
+| `<id>` | `<role>` | `<relative-link>` | `<scope>` | `<method and date>` |
+
+## Memory Topology
+
+- Rules: `<link>`
+- Status panels: `<links-or-pattern>`
+- Stable designs: `<links-or-pattern>`
+- Asset indexes: `<links-or-pattern>`
+- History: `<link>`
+- Audit archives: `<location>`
+
+## Update Rule
+
+Update this file only when a durable rule, shared authority, active-area state, or route changes. Verify target artifacts before changing their status or location here.

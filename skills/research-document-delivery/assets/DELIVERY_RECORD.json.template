@@ -1,0 +1,49 @@
+{
+  "schema_version": "2.0",
+  "delivery_id": "<stable-id>",
+  "state": "candidate",
+  "content_authority": "<stable-id and relative locator>",
+  "format_authority": "<stable-id and relative locator>",
+  "synchronization_direction": "<word-to-markdown/markdown-to-word/bidirectional/single-format>",
+  "submitted_baseline_id": null,
+  "artifacts": [
+    {
+      "artifact_id": "<stable-id>",
+      "role": "final",
+      "path": "<relative-path-from-record>",
+      "media_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "sha256": "<64-character-sha256>",
+      "frozen": false,
+      "required_gates": [
+        {"gate": "content", "evidence_mode": "file", "extensions": {}},
+        {"gate": "package", "evidence_mode": "file", "extensions": {}},
+        {"gate": "rendered", "evidence_mode": "file", "extensions": {}},
+        {"gate": "delivery-package", "evidence_mode": "file", "extensions": {}}
+      ],
+      "extensions": {}
+    }
+  ],
+  "validations": [
+    {
+      "gate": "package",
+      "status": "<passed/failed/unavailable/not-applicable>",
+      "artifact_id": "<stable-id>",
+      "artifact_sha256": "<64-character-sha256>",
+      "performed_at": "<ISO-8601 timestamp with timezone>",
+      "evidence": {
+        "kind": "file",
+        "path": "<relative-path-to-evidence-file>",
+        "sha256": "<64-character-sha256>",
+        "extensions": {}
+      },
+      "not_applicable": null,
+      "limitations": "<none or explicit limitation>",
+      "extensions": {}
+    }
+  ],
+  "delivery_members": ["<artifact-id>"],
+  "invalidated_checks": [],
+  "unresolved_risks": [],
+  "next_action": "<one executable action and acceptance condition>",
+  "extensions": {}
+}

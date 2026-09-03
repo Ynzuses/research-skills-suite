@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Document Delivery"
+  short_description: "Engineer and verify Word, Markdown, and PDF research files"
+  default_prompt: "Use $research-document-delivery to edit, synchronize, clean, and verify these research documents while preserving structure and a recoverable audit trail."
+policy:
+  allow_implicit_invocation: true

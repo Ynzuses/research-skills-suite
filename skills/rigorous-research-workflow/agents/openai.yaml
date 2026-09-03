@@ -1,0 +1,6 @@
+interface:
+  display_name: "Rigorous Research Workflow"
+  short_description: "Govern research lifecycle changes and invalidations"
+  default_prompt: "Use $rigorous-research-workflow to recover lifecycle state, propagate this upstream change across linked artifacts, delegate repairs, and enforce the next transition gate."
+policy:
+  allow_implicit_invocation: true

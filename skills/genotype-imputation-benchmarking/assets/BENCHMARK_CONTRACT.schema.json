@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:research-skills-suite:benchmark-contract:2.0",
+  "title": "Genotype imputation benchmark contract",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "benchmark_id",
+    "target_use",
+    "optimization_object",
+    "population_and_ploidy",
+    "truth",
+    "evaluation_universe",
+    "conditions",
+    "input_registry",
+    "workflows",
+    "pilot_runs",
+    "metrics",
+    "leakage_ledger",
+    "required_comparisons",
+    "downstream_validation",
+    "compute_reporting",
+    "confirmatory_lock",
+    "extensions"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "benchmark_id": {"type": "string", "minLength": 1},
+    "target_use": {"type": "string", "minLength": 1},
+    "optimization_object": {"type": "string", "minLength": 1},
+    "population_and_ploidy": {"type": "string", "minLength": 1},
+    "truth": {"type": "object"},
+    "evaluation_universe": {"type": "object"},
+    "conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/condition"}
+    },
+    "input_registry": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/input"}
+    },
+    "workflows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/workflow"}
+    },
+    "pilot_runs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/pilot"}
+    },
+    "metrics": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "leakage_ledger": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "object"}
+    },
+    "required_comparisons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "object"}
+    },
+    "downstream_validation": {"$ref": "#/$defs/downstream"},
+    "compute_reporting": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "confirmatory_lock": {
+      "type": "object",
+      "required": [
+        "status",
+        "contract_fingerprint",
+        "frozen_before_final_evaluation",
+        "evidence"
+      ],
+      "properties": {
+        "status": {"enum": ["open", "frozen"]},
+        "contract_fingerprint": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "frozen_before_final_evaluation": {"type": ["boolean", "null"]},
+        "evidence": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "extensions": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"target_use": {"const": "downstream-analysis"}}},
+      "then": {
+        "properties": {
+          "downstream_validation": {
+            "properties": {
+              "applicability": {"const": "required"},
+              "endpoints": {"minItems": 1}
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "condition": {
+      "type": "object",
+      "required": ["condition_id", "dimensions"],
+      "properties": {
+        "condition_id": {"type": "string", "minLength": 1},
+        "dimensions": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {"minLength": 1},
+          "additionalProperties": {"type": ["string", "number"]}
+        }
+      },
+      "additionalProperties": true
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "input_id",
+        "role",
+        "data_type",
+        "status",
+        "authority",
+        "version",
+        "contains_evaluation_truth",
+        "verification",
+        "extensions"
+      ],
+      "properties": {
+        "input_id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "data_type": {"type": "string", "minLength": 1},
+        "status": {"enum": ["open", "verified", "retired"]},
+        "authority": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]},
+        "contains_evaluation_truth": {"type": ["boolean", "null"]},
+        "verification": {"type": ["string", "null"]},
+        "extensions": {"type": "object"}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "verified"}}},
+          "then": {
+            "properties": {
+              "authority": {"type": "string", "minLength": 1},
+              "version": {"type": "string", "minLength": 1},
+              "contains_evaluation_truth": {"type": "boolean"},
+              "verification": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      ]
+    },
+    "workflow": {
+      "type": "object",
+      "required": [
+        "workflow_id",
+        "version",
+        "comparison_role",
+        "confirmatory",
+        "target_interface",
+        "input_ids",
+        "reference_context",
+        "transductive",
+        "tuning_budget",
+        "output_fields",
+        "failure_rule",
+        "extensions"
+      ],
+      "properties": {
+        "workflow_id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "comparison_role": {"enum": ["candidate", "baseline", "diagnostic", "ablation"]},
+        "confirmatory": {"type": ["boolean", "null"]},
+        "target_interface": {"type": "string", "minLength": 1},
+        "input_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "reference_context": {"type": "string", "minLength": 1},
+        "transductive": {"type": ["boolean", "null"]},
+        "tuning_budget": {"type": "string", "minLength": 1},
+        "output_fields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "failure_rule": {"type": "string", "minLength": 1},
+        "extensions": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "pilot": {
+      "type": "object",
+      "required": [
+        "pilot_id",
+        "workflow_id",
+        "condition_id",
+        "design_fingerprint",
+        "state",
+        "output_validation",
+        "extensions"
+      ],
+      "properties": {
+        "pilot_id": {"type": "string", "minLength": 1},
+        "workflow_id": {"type": "string", "minLength": 1},
+        "condition_id": {"type": "string", "minLength": 1},
+        "design_fingerprint": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-fA-F]{64}$"
+        },
+        "state": {"enum": ["planned", "running", "passed", "failed", "stale"]},
+        "output_validation": {
+          "type": "object",
+          "required": ["status", "verified_fields", "evidence"],
+          "properties": {
+            "status": {"enum": ["pending", "passed", "failed"]},
+            "verified_fields": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {"type": "string", "minLength": 1}
+            },
+            "evidence": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "extensions": {"type": "object"}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {"properties": {"state": {"const": "passed"}}},
+          "then": {
+            "properties": {
+              "design_fingerprint": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
+              "output_validation": {
+                "properties": {
+                  "status": {"const": "passed"},
+                  "evidence": {"type": "string", "minLength": 1}
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["outcome_id", "definition", "unit", "analysis_rule", "acceptance_rule"],
+      "properties": {
+        "outcome_id": {"type": "string", "minLength": 1},
+        "definition": {"type": "string", "minLength": 1},
+        "unit": {"type": "string", "minLength": 1},
+        "analysis_rule": {"type": "string", "minLength": 1},
+        "acceptance_rule": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "endpoint": {
+      "type": "object",
+      "required": [
+        "endpoint_id",
+        "task",
+        "role",
+        "workflow_ids",
+        "condition_ids",
+        "input_fields",
+        "analysis_plan",
+        "outcomes",
+        "status",
+        "verification",
+        "extensions"
+      ],
+      "properties": {
+        "endpoint_id": {"type": "string", "minLength": 1},
+        "task": {"type": "string", "minLength": 1},
+        "role": {"enum": ["confirmatory", "exploratory", "diagnostic", null]},
+        "workflow_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "condition_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "input_fields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "analysis_plan": {"type": ["string", "null"]},
+        "outcomes": {"type": "array", "items": {"$ref": "#/$defs/outcome"}},
+        "status": {"enum": ["open", "ready", "completed", "failed"]},
+        "verification": {"type": ["string", "null"]},
+        "extensions": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "downstream": {
+      "type": "object",
+      "required": ["applicability", "reason", "endpoints", "extensions"],
+      "properties": {
+        "applicability": {"enum": ["open", "required", "not-applicable"]},
+        "reason": {"type": ["string", "null"]},
+        "endpoints": {"type": "array", "items": {"$ref": "#/$defs/endpoint"}},
+        "extensions": {"type": "object"}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {"properties": {"applicability": {"const": "required"}}},
+          "then": {"properties": {"endpoints": {"minItems": 1}}}
+        },
+        {
+          "if": {"properties": {"applicability": {"const": "not-applicable"}}},
+          "then": {
+            "properties": {
+              "reason": {"type": "string", "minLength": 1},
+              "endpoints": {"maxItems": 0}
+            }
+          }
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

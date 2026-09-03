@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "status": "pending",
+  "approval": {
+    "approver": "PENDING",
+    "approved_at": "PENDING"
+  },
+  "candidate": {
+    "resolved_path": "PENDING",
+    "tree_sha256": "PENDING",
+    "file_count": 0,
+    "directory_count": 0
+  },
+  "installed": {
+    "resolved_path": "PENDING",
+    "tree_sha256": "PENDING",
+    "file_count": 0,
+    "directory_count": 0
+  },
+  "trusted_source": {
+    "resolved_root": "PENDING",
+    "runner": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    },
+    "validate_suite": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    },
+    "score_activation_results": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    },
+    "golden_prompts": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    },
+    "trusted_tests": {
+      "pattern": "tests/test_*.py",
+      "count": 0,
+      "set_sha256": "PENDING",
+      "files": []
+    }
+  },
+  "runtime": {
+    "python": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    }
+  },
+  "official_validators": {
+    "skill": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    },
+    "plugin": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    }
+  },
+  "activation_evidence": {
+    "results": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    },
+    "manifest": {
+      "resolved_path": "PENDING",
+      "sha256": "PENDING"
+    }
+  },
+  "thresholds": {
+    "min_precision": 0.95,
+    "min_recall": 0.9,
+    "min_exact_routing": 0.9,
+    "min_skill_precision": 0.95,
+    "min_skill_recall": 0.9,
+    "min_class_exact_routing": 0.9
+  }
+}

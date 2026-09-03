@@ -1,0 +1,6 @@
+interface:
+  display_name: "Genomics Study Design"
+  short_description: "Design robust genomic analyses beyond human defaults"
+  default_prompt: "Use $genomics-study-design to design or audit this genomics study with species-aware QC, scale-matched hypotheses, leakage control, and traceable validation."
+policy:
+  allow_implicit_invocation: true

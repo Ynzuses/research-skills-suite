@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "run_id": "<stable-id>",
+  "stage_id": "<stable-id>",
+  "scientific_question": "<question and unit of analysis>",
+  "state": "planned",
+  "inputs": [
+    {
+      "input_id": "<stable-id>",
+      "role": "<role>",
+      "path": "<relative-path-or-symbolic-external-root>",
+      "identity": "<version, accession, or sha256>",
+      "verification": "<method>"
+    }
+  ],
+  "code": {
+    "entrypoint": "<relative-path>",
+    "version": "<commit, release, or content identity>",
+    "parameters": "<config ID or normalized parameters>"
+  },
+  "environment": {
+    "identity": "<lockfile, image, or environment ID>",
+    "activation": "<portable activation instruction>",
+    "verification": "<version/import check>"
+  },
+  "partition_contract": {
+    "unit": "<sample/region/chromosome/fold/file/replicate>",
+    "expected_task_ids": ["<task-id>"],
+    "retry_rule": "<rule>",
+    "overwrite_rule": "<rule>"
+  },
+  "tasks": [
+    {
+      "task_id": "<task-id>",
+      "state": "planned",
+      "attempt": 0,
+      "exit_code": null,
+      "success_marker": null,
+      "skip_record": null,
+      "output_ids": ["<output-id>"],
+      "evidence": "<scheduler/log/check locator>"
+    }
+  ],
+  "outputs": [
+    {
+      "output_id": "<output-id>",
+      "role": "<authoritative output role>",
+      "completion_critical": null,
+      "path": "<relative-path-or-symbolic-external-root>",
+      "semantic_state": "missing",
+      "sha256": null,
+      "schema": "<schema or format contract>",
+      "row_or_record_count": null,
+      "upstream_fingerprint": "<input+code+environment identity>",
+      "verification": "<invariant check>"
+    }
+  ],
+  "checkpoints": [
+    {
+      "checkpoint_id": "<stable-id>",
+      "task_id": "<task-id>",
+      "completion_contract": "<content, marker, count, and upstream checks>",
+      "status": "pending",
+      "evidence": "<relative locator>"
+    }
+  ],
+  "failures_and_fallbacks": [],
+  "privacy_and_release": "<handling and publication boundary>",
+  "next_action": "<one executable action and acceptance condition>",
+  "extensions": {}
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evidence-Traceable Literature Review"
+  short_description: "Search, verify, and synthesize primary literature"
+  default_prompt: "Use $evidence-traceable-literature-review to search, verify, and synthesize this research question with a traceable claim-to-source evidence trail."
+policy:
+  allow_implicit_invocation: true

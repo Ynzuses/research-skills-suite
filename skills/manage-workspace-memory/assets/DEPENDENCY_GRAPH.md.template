@@ -1,0 +1,17 @@
+# Dependency Graph: `<scope>`
+
+> The table is authoritative. Mermaid or other diagrams are optional derived views.
+
+| Edge ID | Upstream stable ID | Relationship | Downstream stable ID | Impact if upstream changes | State | Last verified |
+| --- | --- | --- | --- | --- | --- | --- |
+| `<edge-id>` | `<asset-or-stage-id>` | `<consumes/derives-from/blocks/mirrors/supersedes>` | `<asset-or-stage-id>` | `<rerun/review/resync/release block>` | `<active/provisional/retired>` | `<method and date>` |
+
+## Nodes Outside the Asset Index
+
+| Stable ID | Role | Owner | Authority location | State |
+| --- | --- | --- | --- | --- |
+| `<stage-or-decision-id>` | `<role>` | `<scope-or-role>` | `<relative-link>` | `<active/provisional/retired>` |
+
+## Update Rule
+
+Update this graph only when dependency topology or execution order changes. If an upstream authority changes, identify affected downstream artifacts and route the required rerun, review, synchronization, or release block into current status.

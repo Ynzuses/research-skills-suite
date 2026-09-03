@@ -1,0 +1,63 @@
+# Workspace Blueprint: `<workspace>`
+
+- Blueprint ID: `<stable-id>`
+- Prepared: `<YYYY-MM-DD timezone>`
+- Basis: `<read-only inventory links or methods>`
+- Status: `<proposed/approved/applied/superseded>`
+
+## Project Characteristics
+
+| Characteristic | Observed state | Structural implication | Evidence |
+| --- | --- | --- | --- |
+| Projects, products, or deliverables | `<count-and-roles>` | `<ownership partition>` | `<link-or-inspection>` |
+| Shared authorities | `<assets-or-none>` | `<common scope>` | `<link>` |
+| Lifecycles | `<active/generated/frozen/external>` | `<separation>` | `<link>` |
+| Privacy and access | `<classes>` | `<boundary>` | `<rule>` |
+| Computation and storage | `<local/remote/HPC/large data>` | `<root-and-provenance rule>` | `<link>` |
+| Version control and release | `<repositories/public outputs>` | `<tracking/export boundary>` | `<link>` |
+| Owners and readers | `<roles>` | `<federation or shared control>` | `<decision>` |
+
+## Selected Profile
+
+- Profile: `<lean/standard/federated/custom mapping>`
+- Rationale: `<why this is the smallest sufficient control plane>`
+- Existing conventions preserved: `<paths and reasons>`
+- Rejected alternatives: `<option and reason>`
+
+## Authority and Directory Map
+
+| Scope | Role | Current or proposed path | Authority state | Readers | Update trigger |
+| --- | --- | --- | --- | --- | --- |
+| `<scope>` | `<rules/status/design/assets/topic/DAG/history/audit>` | `<relative-path>` | `<existing/new/shared/mirror>` | `<roles>` | `<event>` |
+
+## Installed Capability Routes
+
+Populate this table from capabilities actually available during bootstrap. A route is justified by an observed project task and points to the project's own authority; unavailable or irrelevant capabilities are omitted.
+
+| Project task pattern | Installed capability | Project authority or entry | Compose when | Exclude when |
+| --- | --- | --- | --- | --- |
+| `<observed task>` | `<available-skill-name>` | `<relative route>` | `<cross-boundary condition>` | `<near-neighbor boundary>` |
+
+## Change Plan
+
+| Action ID | Action | Exact target | Reason | Authorization | Validation | State |
+| --- | --- | --- | --- | --- | --- | --- |
+| `<id>` | `<keep/create/link/merge/move/retire/investigate>` | `<relative-path>` | `<reason>` | `<read-only/task-authorized/confirm>` | `<check>` | `<planned/applied/deferred>` |
+
+## Boundaries and Risks
+
+- Frozen or read-only material: `<locations and identities>`
+- Sensitive or excluded material: `<safe metadata only>`
+- Destructive or external actions requiring confirmation: `<actions>`
+- Unresolved authority conflicts: `<items and decision owner>`
+
+## Acceptance
+
+- [ ] Actual startup entry reaches rules/index, current status, and task evidence in at most three hops
+- [ ] One authority is named for each fact type and shared asset role
+- [ ] Existing coherent structure was mapped before any rename proposal
+- [ ] No unauthorized move, overwrite, deletion, publication, or external transfer occurred
+- [ ] Read-only drift audit reviewed
+- [ ] Fresh-session recovery test passed
+- [ ] Representative fresh-session tasks selected the installed capability routes without requiring the user to name them
+- [ ] No-change session leaves control-plane file hashes unchanged

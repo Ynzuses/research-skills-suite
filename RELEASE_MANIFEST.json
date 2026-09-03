@@ -1,0 +1,34 @@
+{
+  "export_layout": "public-root-with-skills",
+  "homepage_url": "https://github.com/Ynzuses/research-skills-suite",
+  "inventory": {
+    "algorithm": "SHA-256",
+    "assurance": "package-local consistency only; not publisher identity, provenance, or release trust",
+    "file_count": 113,
+    "path": "SHA256SUMS",
+    "scope": "all regular files except SHA256SUMS"
+  },
+  "license": "Apache-2.0",
+  "plugin_name": "research-skills-suite",
+  "privacy_policy_url": "https://github.com/Ynzuses/research-skills-suite/blob/main/PRIVACY.md",
+  "publisher": {
+    "name": "Ynzuses",
+    "url": "https://github.com/Ynzuses"
+  },
+  "repository_url": "https://github.com/Ynzuses/research-skills-suite",
+  "schema_version": 1,
+  "skills": [
+    "evidence-traceable-literature-review",
+    "genomics-study-design",
+    "genotype-imputation-benchmarking",
+    "manage-workspace-memory",
+    "reproducible-computational-research",
+    "research-document-delivery",
+    "rigorous-research-workflow",
+    "scientific-writing-and-revision"
+  ],
+  "source_layout": "flat-suite-source",
+  "support_url": "https://github.com/Ynzuses/research-skills-suite/issues",
+  "terms_of_service_url": "https://github.com/Ynzuses/research-skills-suite/blob/main/TERMS.md",
+  "version": "0.6.0"
+}

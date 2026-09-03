@@ -1,0 +1,6 @@
+interface:
+  display_name: "Reproducible Computational Research"
+  short_description: "Build auditable local and HPC research workflows"
+  default_prompt: "Use $reproducible-computational-research to design, diagnose, or audit this computational workflow with explicit provenance, checkpoints, and reproducible outputs."
+policy:
+  allow_implicit_invocation: true

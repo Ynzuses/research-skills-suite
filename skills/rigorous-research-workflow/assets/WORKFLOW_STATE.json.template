@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "workflow_id": "<stable-id>",
+  "current_state": "scoped",
+  "purpose_contract": {
+    "id": "<stable-id>",
+    "objective": "<bounded objective>",
+    "intended_contribution": "<contribution>",
+    "unit_and_scale": "<unit and scale>",
+    "required_outputs": ["<stable-output-id>"],
+    "disallowed_substitutes": ["<out-of-scope endpoint>"]
+  },
+  "authorities": {
+    "design": {"id": "<stable-id>", "location": "<relative-path-or-record>"},
+    "evidence_snapshot": null,
+    "analysis_snapshot": null,
+    "content_snapshot": null,
+    "delivery_artifact": null,
+    "memory_status": {"id": "<stable-id>", "location": "<relative-path>"}
+  },
+  "privacy_boundary": "<public/internal/sensitive and handling rule>",
+  "invalidations": [],
+  "blockers": [],
+  "next_action": {
+    "action": "<one executable action>",
+    "input": "<authority ID>",
+    "expected_output": "<artifact or state>",
+    "acceptance": "<observable condition>"
+  },
+  "transitions": [
+    {
+      "transition_id": "<stable-id>",
+      "from": null,
+      "to": "scoped",
+      "date": "<ISO-8601 timestamp with timezone>",
+      "owner": "<role>",
+      "evidence": ["<authority ID or relative locator>"],
+      "invalidated": [],
+      "notes": "<reason and limitations>"
+    }
+  ],
+  "extensions": {}
+}

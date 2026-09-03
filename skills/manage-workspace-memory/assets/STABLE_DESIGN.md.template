@@ -1,0 +1,48 @@
+# Stable Design: `<scope>`
+
+- Design ID: `<stable-id>`
+- Status: `<approved/provisional/superseded>`
+- Effective date: `<YYYY-MM-DD>`
+- Supersedes: `<stable-id-or-none>`
+- Decision history: `<relative-link>`
+
+## Scope and Non-Goals
+
+- In scope: `<boundaries>`
+- Out of scope: `<boundaries>`
+
+## Questions and Success Criteria
+
+| Question | Evidence needed | Acceptance criterion |
+| --- | --- | --- |
+| `<question>` | `<data-or-test>` | `<criterion>` |
+
+## Authoritative Inputs
+
+| Input ID | Role | Authority | Version or coordinate system | Verification |
+| --- | --- | --- | --- | --- |
+| `<id>` | `<role>` | `<relative-link>` | `<version>` | `<method/date>` |
+
+## Definitions and Contracts
+
+- `<term or interface>`: `<unambiguous definition, units, schema, or invariant>`
+
+## Decisions in Force
+
+| Decision ID | Decision | Rationale | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| `<id>` | `<decision>` | `<reason>` | `<link>` | `<locked/provisional>` |
+
+## Hypotheses and Unknowns
+
+- Hypothesis: `<testable statement; do not write as a result>`
+- Unknown: `<unknown and confirmation path>`
+
+## Dependencies and Outputs
+
+- Dependency graph: `<relative-link-or-none>`
+- Expected authoritative outputs: `<stable IDs and roles>`
+
+## Change Control
+
+A design change must identify the affected decision, evidence, downstream artifacts, superseded version, and required status/index updates.

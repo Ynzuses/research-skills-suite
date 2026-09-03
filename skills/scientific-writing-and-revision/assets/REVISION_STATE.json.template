@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.1",
+  "document_id": "<stable-id>",
+  "document_type": "<framework/review/manuscript/abstract/caption/report/translation/summary>",
+  "purpose_contract": {
+    "objective": "<reader question>",
+    "intended_contribution": "<contribution>",
+    "current_document_role": "<responsibility of this document>",
+    "supporting_assets": ["<bounded method or evidence role>"],
+    "deferred_deliverables": ["<separate future output>"],
+    "disallowed_substitutes": ["<plausible but wrong endpoint>"]
+  },
+  "evidence_snapshot": {
+    "id": "<stable-id>",
+    "location": "<relative-path-or-record>"
+  },
+  "surfaces": [
+    {
+      "surface_id": "body",
+      "role": "<role in the argument>",
+      "location": "<relative-path-or-block-locator>",
+      "status": "current"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "<stable-id>",
+      "epistemic_status": "<source-fact/synthesis/conditional-inference/approved-decision/open-option/result/hypothesis>",
+      "evidence_locator": "<source or analysis locator>",
+      "surface_ids": ["body"]
+    }
+  ],
+  "feedback_decisions": [
+    {
+      "feedback_id": "<stable-id>",
+      "judgment": "<correct/partly-correct/preference-dependent/unsupported>",
+      "reason": "<evidence or document logic>",
+      "local_repair": "<repair or no change>",
+      "global_pattern": "<analogous defect search rule>",
+      "affected_surface_ids": ["body"],
+      "verification": "<post-repair check>"
+    }
+  ],
+  "unresolved_gaps": ["<evidence, terminology, scope, or delivery gap>"],
+  "next_action": "<one executable action and acceptance condition>",
+  "extensions": {}
+}
