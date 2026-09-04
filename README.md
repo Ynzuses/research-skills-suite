@@ -2,6 +2,33 @@
 
 Research Skills Suite is a producer-oriented collection of Codex Skills for evidence-traceable research. It converts recurring research practice into reusable, privacy-safe workflows while keeping project facts, private data, and local infrastructure out of the public packages.
 
+## Quick Install with `skills.sh`
+
+The GitHub repository is the canonical source for this suite. [skills.sh](https://skills.sh/) provides an additional discovery and installation path through the open-source `skills` CLI.
+
+List the available Skills without installing them:
+
+```bash
+npx skills add Ynzuses/research-skills-suite --list
+```
+
+Install all Skills for Codex at user scope:
+
+```bash
+npx skills add Ynzuses/research-skills-suite --skill '*' --agent codex --global
+```
+
+Install one Skill instead:
+
+```bash
+npx skills add Ynzuses/research-skills-suite \
+  --skill evidence-traceable-literature-review \
+  --agent codex \
+  --global
+```
+
+Omit `--global` for a project-scoped installation. Start a fresh Codex session after installation so discovery metadata is reloaded. The CLI may report anonymous installation telemetry to the skills.sh leaderboard; set `DISABLE_TELEMETRY=1` or `DO_NOT_TRACK=1` to opt out.
+
 ## Skills
 
 | Product role | Skill | Distinct responsibility |
