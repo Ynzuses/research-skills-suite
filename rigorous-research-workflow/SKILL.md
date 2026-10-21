@@ -2,7 +2,7 @@
 name: rigorous-research-workflow
 description: "Govern linked research artifacts when lifecycle state, upstream invalidation, frozen baselines, or release decisions must be coordinated across design, evidence, writing, delivery, or public release. Use when a task needs traceable change propagation or multi-artifact transition gates; let specialist skills handle ordinary combinations. Do not use for a single review, draft, document edit, analysis, citation, or routine debugging."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Rigorous Research Workflow

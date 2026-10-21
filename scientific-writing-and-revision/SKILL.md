@@ -2,7 +2,7 @@
 name: scientific-writing-and-revision
 description: "Draft or revise evidence-calibrated scientific arguments. Use for manuscripts, reviews, abstracts, reports, scientific translation, or feedback rounds when purpose, reader order, evidence strength, epistemic status, feedback generalization, or consistency across prose, tables, conclusions, and summaries matters. Compose with evidence and delivery skills as needed. Do not use for routine spelling, general translation, formatting-only work, or citation lookup."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Scientific Writing and Revision

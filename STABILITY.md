@@ -4,7 +4,7 @@
 
 The public compatibility surface is the declared Skill IDs and membership, documented task boundaries, supplied command-line interfaces and machine-readable schema contracts. Preserve existing meanings, fail closed on unsupported schemas and document migrations. Generated prose and presentation layout are task-dependent outputs, not a byte-stable API. Native software, external tools and client capabilities retain their own requirements.
 
-Use PATCH for compatible defect corrections, MINOR for compatible additions, and MAJOR for incompatible membership, identity, CLI, schema or required-behavior changes. Internal review rounds are recorded separately from SemVer. The final GitHub tag is `v1.0.0`; an internal `r1` directory is a review coordinate, not a second stable version. Candidate status remains separate from publication status.
+Use PATCH for compatible defect corrections, MINOR for compatible additions, and MAJOR for incompatible membership, identity, CLI, schema or required-behavior changes. Internal review rounds are recorded separately from SemVer. The current patch tag is `v1.0.1`; the first stable tag remains `v1.0.0`. An internal `r1` directory is a review coordinate, not a second stable version. Candidate status remains separate from publication status.
 
 Published release bytes and tags are immutable. Later fixes receive a new version. A passed package check is not a promise of automatic activation, scientific truth, native application compatibility or successful external publication.
 

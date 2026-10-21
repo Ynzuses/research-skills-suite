@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 - 2026-10-21
+
+Connected the legacy all-in-one release to the six maintained groups through linked family navigation, an exact eight-member migration map and fixed-tag installation guidance. Clarified which methods were added later. Preserved released tags and package bytes; no runtime, schema or member changes.
+
 ## 1.0.0 - 2026-10-20
 
 First stable Research Skills Suite group; 4 declared members. See MIGRATION.md and RELEASE_NOTES.md.

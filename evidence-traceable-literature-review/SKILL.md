@@ -2,7 +2,7 @@
 name: evidence-traceable-literature-review
 description: "Build and audit evidence-traceable literature reviews and source packages. Use when a task needs multi-source discovery plus screening, primary-full-text verification, claim-to-source matrices, contrary evidence, novelty or citation-delta audits, bibliography changes, or review synthesis. Compose with search, citation, database, and PDF skills. Do not use for one DOI, a routine fact, or prose-only editing."
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Evidence-Traceable Literature Review

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "id": "research-skills-suite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "skills": [
     "evidence-traceable-literature-review",
     "scientific-writing-and-revision",

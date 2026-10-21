@@ -1,4 +1,4 @@
-# Verification scope for 1.0.0
+# Verification scope for 1.0.1
 
 The grouping preparation checks exact membership and unique ownership, stable metadata, official Skill frontmatter, UI invocation fields, Python syntax, local Markdown links, selected private-path/credential patterns and retained licenses. Maintainer checks bind each independently copied candidate, its SHA256SUMS and ZIP member bytes to the reviewed source inventory. Historical candidate files remain unchanged; derived selection indexes can point to the new candidate.
 
@@ -15,3 +15,7 @@ The following pre-stable record, where present, describes its own dated artifact
 ## Current source regression result
 
 The stable group source runs 74 synthetic regression tests: 71 passed, 3 environment-dependent skips, no failures. Official Skill quick validation passes for every member. Candidate copies are independently checked and exercised before release preparation is closed; these counts do not represent independent model behavior.
+
+## Navigation patch
+
+Version 1.0.1 changes documentation, distribution metadata and fixed installation links. Runtime scripts and tests are byte-identical to v1.0.0, so its dated regression results remain applicable to those files; they are not described as newly rerun here. The legacy mapping is checked against the actual v0.6.0 Git tree. The new candidate, official member frontmatter, English documentation, linked current releases and an isolated fixed-tag installation are checked separately. A migration annotation on the old release page preserves its original notes verbatim and changes no tagged/package bytes.
