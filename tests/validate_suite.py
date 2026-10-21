@@ -24,15 +24,12 @@ from urllib.parse import unquote, urlsplit
 
 EXPECTED_SKILLS = (
     "evidence-traceable-literature-review",
-    "genomics-study-design",
-    "genotype-imputation-benchmarking",
-    "manage-workspace-memory",
     "reproducible-computational-research",
-    "research-document-delivery",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )
 EXPECTED_SKILL_SET = set(EXPECTED_SKILLS)
+OPTIONAL_COMPANION_SKILLS = {"genomics-study-design", "genotype-imputation-benchmarking", "manage-workspace-memory", "research-document-delivery"}
 ALLOWED_FRONTMATTER_KEYS = {
     "name",
     "description",
@@ -318,7 +315,7 @@ def detect_layout(root: Path, scan: Scan, failures: list[str]) -> Layout | None:
         return None
     if found != EXPECTED_SKILL_SET:
         failures.append(
-            "layout must contain exactly 8 declared Skills; "
+            "layout must contain exactly 4 declared Skills; "
             f"missing={sorted(EXPECTED_SKILL_SET - found)}, "
             f"extra={sorted(found - EXPECTED_SKILL_SET)}"
         )
@@ -555,7 +552,7 @@ def check_skills(
                 )
     if names != EXPECTED_SKILL_SET:
         failures.append(
-            "parsed Skill names do not equal the declared 8-Skill set: "
+            "parsed Skill names do not equal the declared 4-Skill set: "
             f"{sorted(names)}"
         )
     return names
@@ -670,7 +667,7 @@ def check_golden_prompts(
             ("expected", expected_skills),
             ("forbidden", forbidden_skills),
         ):
-            for name in sorted(values - EXPECTED_SKILL_SET):
+            for name in sorted(values - EXPECTED_SKILL_SET - OPTIONAL_COMPANION_SKILLS):
                 failures.append(
                     f"{relative(root, path)}:{row_number}: "
                     f"unknown {field} skill {name!r}"
@@ -920,7 +917,7 @@ def check_public_metadata(
         failures.append("RELEASE_MANIFEST version does not match VERSION")
     if release.get("skills") != list(EXPECTED_SKILLS):
         failures.append(
-            "RELEASE_MANIFEST skills must be the sorted declared 8-Skill set"
+            "RELEASE_MANIFEST skills must be the sorted declared 4-Skill set"
         )
     if release.get("license") != plugin.get("license"):
         failures.append("RELEASE_MANIFEST license does not match plugin.json")
@@ -1012,7 +1009,7 @@ def main() -> int:
         print(f"RESULT: STATIC FAIL ({len(failures)} issue(s))")
         return 1
     assert layout is not None
-    print(f"RESULT: STATIC PASS (layout={layout.kind}; skills=8)")
+    print(f"RESULT: STATIC PASS (layout={layout.kind}; skills={len(EXPECTED_SKILLS)})")
     return 0
 
 

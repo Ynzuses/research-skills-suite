@@ -21,11 +21,7 @@ from typing import Any
 
 EXPECTED_SKILLS = (
     "evidence-traceable-literature-review",
-    "genomics-study-design",
-    "genotype-imputation-benchmarking",
-    "manage-workspace-memory",
     "reproducible-computational-research",
-    "research-document-delivery",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )

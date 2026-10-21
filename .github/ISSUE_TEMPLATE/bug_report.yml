@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible installation or workflow problem.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: Use a small synthetic example. Remove credentials, personal data, private paths, and unpublished material from all inputs and logs.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions and environment
+      description: Include the release, affected Skill, agent/CLI version, operating system, and installation scope.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide a minimal command, prompt, or synthetic fixture and the steps that trigger the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs or additional context
+    validations:
+      required: false

@@ -167,7 +167,7 @@ class ExportReleaseCandidateTests(unittest.TestCase):
                 path.parent.name
                 for path in (target / "skills").glob("*/SKILL.md")
             }
-            self.assertEqual(len(skills), 8)
+            self.assertEqual(len(skills), 4)
             self.assertFalse((target / "PLUGIN_RELEASE.md").exists())
             self.assertFalse((target / ".git").exists())
             for name in (
@@ -403,7 +403,7 @@ class ExportReleaseCandidateTests(unittest.TestCase):
                         (source / "README.md").replace(original)
                         os.symlink(original, source / "README.md")
                     elif case == "skill-directory":
-                        name = "manage-workspace-memory"
+                        name = "evidence-traceable-literature-review"
                         original = source / f"{name}.original"
                         (source / name).replace(original)
                         os.symlink(original, source / name, target_is_directory=True)
@@ -426,7 +426,7 @@ class ExportReleaseCandidateTests(unittest.TestCase):
             external = area / "junction-target"
             external.mkdir()
             (external / "private.txt").write_text("private\n", encoding="utf-8")
-            junction = source / "manage-workspace-memory" / ".GiT"
+            junction = source / "evidence-traceable-literature-review" / ".GiT"
             created = subprocess.run(
                 [
                     "cmd.exe",
@@ -476,7 +476,7 @@ class ExportReleaseCandidateTests(unittest.TestCase):
     def test_internal_temporary_directory_names_are_casefolded_and_rejected(self) -> None:
         with temporary_area() as area:
             source = copy_source(area / "source")
-            skill = source / "manage-workspace-memory"
+            skill = source / "evidence-traceable-literature-review"
             mixed_activation = skill / ".AcTiVaTiOn-secret"
             mixed_activation.mkdir()
             (mixed_activation / "audit.txt").write_text("internal\n", encoding="utf-8")
@@ -503,9 +503,9 @@ class ExportReleaseCandidateTests(unittest.TestCase):
             source = copy_source(area / "source")
             victim = (
                 source
-                / "manage-workspace-memory"
+                / "evidence-traceable-literature-review"
                 / "references"
-                / "session-lifecycle.md"
+                / "search-and-screening.md"
             )
             original_bytes = victim.read_bytes()
             victim.unlink()

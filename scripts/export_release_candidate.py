@@ -21,11 +21,7 @@ from urllib.parse import urlsplit
 
 EXPECTED_SKILLS = (
     "evidence-traceable-literature-review",
-    "genomics-study-design",
-    "genotype-imputation-benchmarking",
-    "manage-workspace-memory",
     "reproducible-computational-research",
-    "research-document-delivery",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )
@@ -42,6 +38,12 @@ REQUIRED_ROOT_FILES = (
     "VERSION",
 )
 OPTIONAL_PUBLIC_ROOT_FILES = (
+    "INSTALL.md",
+    "GROUP.json",
+    "MIGRATION.md",
+    "RELEASE_NOTES.md",
+    "STABILITY.md",
+    "VALIDATION.md",
     ".gitattributes",
     ".gitignore",
     "BINARY_ALLOWLIST.txt",
@@ -521,7 +523,7 @@ def validate_source(
                 found.add(entry.name)
     if found != expected:
         raise ExportError(
-            "flat source must contain exactly the declared 8 Skills; "
+            "flat source must contain exactly the declared 4 Skills; "
             f"missing={sorted(expected - found)}, extra={sorted(found - expected)}"
         )
 
@@ -667,6 +669,8 @@ def public_readme(data: bytes) -> bytes:
         ".codex-plugin/plugin.json."
     )
     text = text.replace(old, replacement)
+    for skill in EXPECTED_SKILLS:
+        text = text.replace(f"]({skill}/", f"](skills/{skill}/")
     if "PLUGIN_RELEASE" in text:
         raise ExportError("README.md still exposes the internal Plugin release plan")
     return text.encode("utf-8")

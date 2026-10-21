@@ -1,8 +1,18 @@
+# Stable group provenance
+
+Maintainer and distribution copyright holder: Ynzuses. License: Apache-2.0, with retained component notices. This 1.0.0 group is an ownership and distribution refactor of maintained methods. It does not adopt third-party Skills as original work or ship private documents, full texts, applicant profiles, machine inventories or development Git history.
+
+Member set: `evidence-traceable-literature-review`, `scientific-writing-and-revision`, `reproducible-computational-research`, `rigorous-research-workflow`. Broader subject lists in the historical provenance below describe earlier method development and reviews, not additional bundled members or runtime dependencies. Original component notices and applicable terms are retained. No new upstream license or market comparison was performed as part of grouping.
+
+## Pre-stable provenance record
+
 # Provenance and Design Sources
 
 Normative platform sources were refreshed 2026-08-20. Public repository patterns were reviewed 2026-07-28 and spot-checked 2026-08-20.
 
 ## Normative Platform Sources
+
+The capability-routing iteration checked the official Skills, MCP, and workspace-instruction documentation on 2026-10-20: [Build skills](https://learn.chatgpt.com/docs/build-skills), [MCP](https://learn.chatgpt.com/docs/extend/mcp?surface=cli), and [AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md). Progressive metadata/instruction loading and advertised connection/policy boundaries inform the workflow. Work-boundary rechecks and compact capability handoffs are suite design choices, not claims that the platform guarantees recall or enables every installed tool.
 
 - OpenAI, “Build Skills”: <https://learn.chatgpt.com/docs/build-skills>
 - OpenAI Developers, “Skills”: <https://developers.openai.com/plugins/concepts/skills>

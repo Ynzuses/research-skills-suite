@@ -74,11 +74,11 @@ class ValidateSuiteTests(unittest.TestCase):
 
     def test_supported_optional_frontmatter_is_accepted(self) -> None:
         with cloned_source() as (_base, root):
-            skill = root / "manage-workspace-memory" / "SKILL.md"
+            skill = root / "evidence-traceable-literature-review" / "SKILL.md"
             text = skill.read_text(encoding="utf-8")
             text = text.replace(
-                "\n---\n",
-                "\nmetadata:\n  maturity: stable\n---\n",
+                "\nmetadata:\n",
+                "\nmetadata:\n  maturity: stable\n",
                 1,
             )
             skill.write_text(text, encoding="utf-8", newline="\n")
@@ -100,13 +100,13 @@ class ValidateSuiteTests(unittest.TestCase):
             )
             completed = validate(root)
             self.assertEqual(completed.returncode, 1)
-            self.assertIn("exactly 8 declared Skills", completed.stdout)
+            self.assertIn("exactly 4 declared Skills", completed.stdout)
 
     def test_commented_openai_fields_cannot_spoof_policy(self) -> None:
         with cloned_source() as (_base, root):
             agent = (
                 root
-                / "manage-workspace-memory"
+                / "evidence-traceable-literature-review"
                 / "agents"
                 / "openai.yaml"
             )

@@ -1,6 +1,6 @@
 # Terms of Use
 
-Last updated: 2026-08-20
+Last updated: 2026-10-21
 
 ## License and Availability
 
@@ -10,7 +10,7 @@ The suite is provided on an “AS IS” basis, without warranties or conditions 
 
 ## Appropriate Use
 
-The suite assists with research organization, evidence review, writing, document delivery, reproducible computation, genomics design, and workflow governance. Its instructions and structural validators do not independently establish scientific truth, legal or regulatory compliance, statistical validity, clinical safety, or publication acceptance. Users remain responsible for reviewing source evidence, outputs, permissions, licenses, privacy boundaries, and decisions before relying on or distributing an artifact.
+The suite assists with literature evidence review, scientific writing and revision, reproducible computation, and lifecycle coordination across linked research outputs. Its instructions and structural validators do not independently establish scientific truth, legal or regulatory compliance, statistical validity, clinical safety, or publication acceptance. Users remain responsible for reviewing source evidence, outputs, permissions, licenses, privacy boundaries, and decisions before relying on or distributing an artifact.
 
 Do not use the suite to bypass access controls, expose confidential or personal data, misrepresent an unrun validation as passed, mutate a frozen artifact without authority, or publish material without the rights to do so. Usage must also comply with the terms and policies of Codex, the host platform, and any external service or data source invoked alongside the suite.
 

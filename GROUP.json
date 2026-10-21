@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "id": "research-skills-suite",
+  "version": "1.0.0",
+  "skills": [
+    "evidence-traceable-literature-review",
+    "scientific-writing-and-revision",
+    "reproducible-computational-research",
+    "rigorous-research-workflow"
+  ],
+  "optional_groups": [
+    "genomics-skills-suite",
+    "workspace-skills-suite",
+    "office-authoring-suite",
+    "voice-preserving-writing"
+  ],
+  "required_member_dependencies": {},
+  "license": "Apache-2.0",
+  "owner": "Ynzuses"
+}

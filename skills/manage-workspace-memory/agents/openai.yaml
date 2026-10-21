@@ -1,6 +1,0 @@
-interface:
-  display_name: "Manage Workspace Memory"
-  short_description: "Build durable, indexed cross-session workspaces"
-  default_prompt: "Use $manage-workspace-memory to inspect this project, infer the smallest suitable workspace blueprint, and establish or maintain a recoverable cross-session control plane."
-policy:
-  allow_implicit_invocation: true

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Genotype Imputation Benchmarking"
-  short_description: "Design and audit genotype imputation comparisons"
-  default_prompt: "Use $genotype-imputation-benchmarking to design, run, or audit this genotype imputation benchmark with fair inputs, explicit metrics, leakage control, and downstream validation."
-policy:
-  allow_implicit_invocation: true

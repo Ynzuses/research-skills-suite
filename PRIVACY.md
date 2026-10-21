@@ -1,10 +1,10 @@
 # Privacy Policy
 
-Last updated: 2026-08-20
+Last updated: 2026-10-21
 
 ## Scope
 
-This policy covers Research Skills Suite as distributed from its official repository and Plugin package. The suite contains agent instructions, templates, and local standard-library validation tools. It does not operate an account service, hosted API, analytics endpoint, advertising system, or telemetry collector.
+This policy covers Research Skills Suite as distributed from its official repository and any separately published derived package. The suite contains agent instructions, templates, and local standard-library validation tools. It does not operate an account service, hosted API, analytics endpoint, advertising system, or telemetry collector.
 
 ## Data Handling
 

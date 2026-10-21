@@ -1,143 +1,52 @@
 # Research Skills Suite
 
-Research Skills Suite is a producer-oriented collection of Codex Skills for evidence-traceable research. It converts recurring research practice into reusable, privacy-safe workflows while keeping project facts, private data, and local infrastructure out of the public packages.
+Traceable literature evidence, scientific arguments, reproducible computation and coordinated research revisions across disciplines.
 
-## Quick Install with `skills.sh`
+For researchers who need traceable literature evidence, evidence-calibrated scientific arguments, reproducible computation, or coordinated revisions across linked research outputs. Select a specialist for an ordinary single task; use lifecycle coordination when several artifacts must move together.
 
-The GitHub repository is the canonical source for this suite. [skills.sh](https://skills.sh/) provides an additional discovery and installation path through the open-source `skills` CLI.
+Suite version: `1.0.0`.
 
-List the available Skills without installing them:
+## Included Skills
 
-```bash
-npx skills add Ynzuses/research-skills-suite --list
-```
-
-Install all Skills for Codex at user scope:
-
-```bash
-npx skills add Ynzuses/research-skills-suite --skill '*' --agent codex --global
-```
-
-Install one Skill instead:
-
-```bash
-npx skills add Ynzuses/research-skills-suite \
-  --skill evidence-traceable-literature-review \
-  --agent codex \
-  --global
-```
-
-Omit `--global` for a project-scoped installation. Start a fresh Codex session after installation so discovery metadata is reloaded. The CLI may report anonymous installation telemetry to the skills.sh leaderboard; set `DISABLE_TELEMETRY=1` or `DO_NOT_TRACK=1` to opt out.
-
-## Skills
-
-| Product role | Skill | Distinct responsibility |
-| --- | --- | --- |
-| Flagship | `manage-workspace-memory` | Project-aware directory and authority design, three-hop recovery, event-driven maintenance, drift audit, frozen baselines, and resumable handoff |
-| Flagship | `evidence-traceable-literature-review` | Reproducible discovery plus primary-full-text, claim-level evidence, contrary evidence, citation-delta, and source-package closure |
-| Flagship | `research-document-delivery` | Word/Markdown/PDF authority, OpenXML safety, comment closure, cross-format parity, final-hash validation, and submitted baselines |
-| Vertical flagship | `genotype-imputation-benchmarking` | Information-interface fairness, leakage-safe truth, evaluation universes, evaluability, calibration, downstream validation, and source-level ablations |
-| Specialist | `scientific-writing-and-revision` | Scientific argument, purpose drift, epistemic status, feedback adjudication, document-wide repair, and short/long-form parity |
-| Specialist | `genomics-study-design` | Reference- and species-aware genomics for non-model, polyploid, duplicated, and other complex genomes |
-| Specialist | `reproducible-computational-research` | Local/HPC provenance, idempotent checkpoints, missing-versus-zero state, quantitative handoff, and public-code boundaries |
-| Orchestrator | `rigorous-research-workflow` | Cross-stage state, invalidation propagation, specialist delegation, transition gates, and privacy-safe release decisions |
-
-The suite deliberately does not split search from literature synthesis, manuscript drafting from language revision, HPC execution from computational provenance, or session startup from session closure. It does separate writing from binary document engineering, general genomics from genotype-imputation benchmarking, and workspace-memory architecture from research governance because those pairs have materially different inputs, failure modes, and completion checks.
-
-All eight Skills are independently installable and have a defensible user goal. They are not marketed at the same level: the four flagship products carry the suite's strongest differentiation, the three specialists provide reusable depth, and `rigorous-research-workflow` is intentionally a thin composition layer rather than an all-purpose research Skill.
-
-See [MARKET_POSITION.md](MARKET_POSITION.md) for the retention, overlap, and release-proof audit.
-
-## Automatic Selection and Maintenance
-
-Every Skill explicitly allows implicit invocation. Its frontmatter description—not the UI default prompt—is the primary automatic-selection interface. The golden specification therefore tests direct, indirect, incomplete, boundary, composition, and negative prompts for every Skill.
-
-`manage-workspace-memory` can bootstrap or safely merge a project-level `AGENTS.md` contract that routes later matching tasks to the appropriate installed Skill and performs event-driven closure after durable changes. This is active-session automation: Skills are not background daemons, and implicit invocation does not authorize file moves, deletion, publication, cloud synchronization, or writes outside the current task.
-
-## Deterministic Automation
-
-The suite uses model judgment for scientific meaning and small dependency-free tools for repeatable structural checks:
-
-| Check | Tool |
+| Skill | Purpose |
 | --- | --- |
-| Workspace routes, links, IDs, placeholders, status fields, and frozen-baseline signals | `manage-workspace-memory/scripts/audit_workspace_memory.py` |
-| Search/screening/evidence/source-package closure | `evidence-traceable-literature-review/scripts/validate_review_bundle.py` |
-| Scientific purpose, claims, feedback decisions, and surface mappings | `scientific-writing-and-revision/scripts/validate_revision_state.py` |
-| DOCX ZIP/OpenXML structures and comment-family closure | `research-document-delivery/scripts/audit_docx_package.py` |
-| Delivery membership, current hashes, frozen state, and validation binding | `research-document-delivery/scripts/verify_delivery_record.py` |
-| Computational tasks, checkpoints, artifacts, and missing/zero/stale state | `reproducible-computational-research/scripts/validate_run_manifest.py` |
-| Assembly/sample/split/QC/scale/hypothesis contract closure | `genomics-study-design/scripts/validate_study_contract.py` |
-| Imputation interfaces, truth, leakage, metrics, conditions, and comparison coverage | `genotype-imputation-benchmarking/scripts/validate_benchmark_contract.py` |
-| Cross-stage lifecycle authorities, transitions, and invalidations | `rigorous-research-workflow/scripts/validate_workflow_state.py` |
-| Recorded clean-install activation precision, recall, exact routing, and behavior | `tests/score_activation_results.py` |
+| [evidence-traceable-literature-review](evidence-traceable-literature-review/SKILL.md) | Reproducible search and screening, primary-source verification, contrary evidence and claim-level citation closure. |
+| [scientific-writing-and-revision](scientific-writing-and-revision/SKILL.md) | Scientific reasoning, evidence-calibrated claims, feedback adjudication and consistency across long and short forms. |
+| [reproducible-computational-research](reproducible-computational-research/SKILL.md) | Local/HPC provenance, environments, checkpoints, reruns and explicit missing, failed and verified-zero states. |
+| [rigorous-research-workflow](rigorous-research-workflow/SKILL.md) | Coordinate upstream invalidation and lifecycle transitions across linked research artifacts; ordinary single tasks use their specialists. |
 
-These tools are read-only unless their documentation explicitly says otherwise. A structural PASS is not evidence that a scientific claim, biological truth set, prose argument, or rendered layout is correct.
+## Install with skills.sh
 
-## Requirements
+After the `v1.0.0` tag is published, run this from the project where you want to use the group:
 
-- A current Codex build with Skill support. Full-suite distribution uses the Plugin interface.
-- Python 3.10 or newer to run the dependency-free validators and release tooling. The Skills themselves are instruction packages; Python is not required merely to read their guidance.
-- The current official `skill-creator` for Skill validation and `plugin-creator` for a generated Plugin tree.
-
-## Install, Update, and Remove
-
-The public release layout is a Plugin containing all eight Skills. In the Codex app, install **Research Skills Suite** from the marketplace or Plugins Directory that carries the release. In the CLI, first list the configured marketplace names, then use the reported name in the remaining commands:
-
-```text
-codex plugin marketplace list
-codex plugin add research-skills-suite --marketplace MARKETPLACE_NAME
-codex plugin marketplace upgrade MARKETPLACE_NAME
-codex plugin remove research-skills-suite --marketplace MARKETPLACE_NAME
+```sh
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.0.0 --skill "*" --agent codex
 ```
 
-For one Skill only, ask the installed `skill-installer` to install the corresponding `skills/<skill-name>` directory from the tagged repository release, or copy that complete Skill directory into the user's Codex Skills directory (`~/.codex/skills/` on Unix-like systems or `%USERPROFILE%\.codex\skills\` on Windows). Do not copy only `SKILL.md`; its `agents/`, `references/`, `scripts/`, and `assets/` may be part of the contract.
+This selects every member for Codex and defaults to the current project. Add `--list` to inspect available members or `--global` for user-wide installation. Use `--skill <skill-name>` to select one member, or choose another supported target such as `--agent claude-code`. Keep the first installation interactive so you can review its destination. Use `--copy` if symbolic links are unavailable.
 
-After installation or update, start a fresh Codex session so discovery metadata is reloaded. Installed copies are deployment artifacts: update the source or tagged release, validate it, then reinstall or redeploy instead of hand-editing the installed copy.
+See **[INSTALL.md](INSTALL.md)** for prerequisites, pinned versions, individual installation, discovery paths, dependencies, updates, and removal. Verify discovery and an actual invocation in the target agent after installing the files.
 
-## Try It Without Naming a Skill
+## Example requests
 
-Implicit selection is enabled for every Skill. Representative requests include:
+> Use $evidence-traceable-literature-review to build a reproducible search, screening record, and claim-to-source matrix for my research question, including contrary evidence.
 
-- “Inspect this new multi-deliverable project and propose the smallest recoverable workspace structure before creating anything.”
-- “Continue this half-finished literature review from its search and screening records, then identify which claims still lack verified full text.”
-- “Revise the argument and evidence strength across this report, its tables, conclusion, and short summary.”
-- “Audit this genotype-imputation comparison for information-interface fairness, leakage, evaluability, and downstream validity.”
+> Use $reproducible-computational-research to audit this workflow's environment, input provenance, checkpoints, and missing or failed results.
 
-Automatic discovery is tested separately from package structure. A release claim requires recorded clean-session activation results; `allow_implicit_invocation: true` alone is not treated as behavioral proof.
+These are requests to an agent. Codex supports explicit `$skill-name` invocation; other agents use their own invocation interface.
 
-## Source and Public Layouts
+## Requirements and scope
 
-This development tree is intentionally flat: its eight immediate Skill directories are the authoritative editable source. The deterministic exporter creates the distributable layout with `.codex-plugin/plugin.json` at the root and the same eight directories under `skills/`. Both layouts are validated, but they must not coexist in one tree or become independent edit branches.
+Bundled validators use Python 3.10+ and the standard library. Live search, full-text access, statistical computation, HPC scheduling, and document rendering require separately available tools. Loading these workflows does not require installing another group.
 
-## Public Distribution
+Contract checks do not establish scientific validity, evidence strength, or successful reproduction. Verify each research result against its actual inputs and final artifacts.
 
-For a single Skill, a repository path can be installed directly. For the full suite, the intended public distribution is a Codex Plugin that bundles these skill directories and carries repository-level version, license, release notes, and installation metadata. The distributable Plugin manifest is stored in .codex-plugin/plugin.json.
+## Versions, support, and license
 
-Public support uses [GitHub Issues as described here](SUPPORT.md); security-sensitive reports use the repository's private advisory channel under [SECURITY.md](SECURITY.md). The package's data-handling boundary is documented in [PRIVACY.md](PRIVACY.md), and [TERMS.md](TERMS.md) distinguishes research assistance from scientific or regulatory proof. Final Plugin metadata must link to the public rendered versions of those policies.
+`1.0.0` is this group's first stable contract. Read [MIGRATION.md](MIGRATION.md) before replacing an older installation and [RELEASE_NOTES.md](RELEASE_NOTES.md) for this release. Compatibility and verification limits are documented in [STABILITY.md](STABILITY.md) and [VALIDATION.md](VALIDATION.md).
 
-Remote creation or publication is a separate maintainer action. Every public version must come from a clean export with an independent privacy scan, license audit, current hashes, and fresh validation.
+Optional companion groups: `genomics-skills-suite`, `workspace-skills-suite`, `office-authoring-suite`, `voice-preserving-writing`. They are independent distributions and are not installed with this group. When reporting a problem, include agent/CLI versions, reproducible steps, errors, and a synthetic example. Remove credentials, personal data, and unpublished material.
 
-## Product Principles
+Copyright 2026 Ynzuses. [Apache-2.0](LICENSE). See [NOTICE](NOTICE) and [PROVENANCE.md](PROVENANCE.md) for attribution and retained component terms.
 
-- One recognizable user goal per Skill; no micro-skill fragmentation.
-- Trigger descriptions specify positive, negative, and composition boundaries.
-- Main instructions stay concise; detailed knowledge lives one level under `references/`.
-- Deterministic scripts are added only for repeated or fragile automation.
-- Persisted contracts fail closed on unknown schema versions; migrations preserve the prior record, and project-specific fields use declared `extensions` objects instead of redefining portable meanings.
-- Project names, local paths, private data, personal identities, and unpublished results do not enter reusable Skills.
-- Scientific defaults are explicit, evidence is traceable, and uncertainty is preserved.
-- Review revisions include citation-delta, epistemic-status, and short-summary parity checks rather than only local prose cleanup.
-- Submitted documents become immutable baselines; later feedback starts a new, independently validated revision.
-- Golden prompts cover direct, indirect, incomplete, boundary, composition, and non-trigger requests.
-
-## Validation
-
-See [TESTING.md](TESTING.md), `tests/validate_suite.py`, and `tests/golden-prompts.tsv`. Structural validation, privacy scanning, trigger review, and independent task forward tests are all release gates.
-
-## Provenance
-
-The methods are an original synthesis of recurring research practice. Platform structure follows current official Codex and Agent Skills specifications. Public repositories were studied for product patterns, not copied verbatim. See [PROVENANCE.md](PROVENANCE.md) and [NOTICE](NOTICE).
-
-## Version
-
-Suite version: `0.6.0`. See [CHANGELOG.md](CHANGELOG.md).
+For proposed changes and reproducible reports, see [CONTRIBUTING.md](CONTRIBUTING.md).

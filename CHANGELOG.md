@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.0.0 - 2026-10-20
+
+First stable Research Skills Suite group; 4 declared members. See MIGRATION.md and RELEASE_NOTES.md.
+
+## Pre-stable history
+
+# Changelog
+
+## 0.9.0 - Unreleased
+
+- Added task-aware capability checkpoints at phase, target/format/system changes, compaction/resume, and material tool failures, with equal consideration of relevant user-maintained, third-party, system, and plugin Skills.
+- Added progressive Skill/tool/MCP discovery and method/executor composition guidance, distinguishing current exposure, instruction/schema reads, target access, and observed execution; project routes remain a shortlist rather than an allowlist.
+- Extended discoverable entry, blueprint, memory, and status templates with refresh triggers and concise capability continuation for unfinished work, without copying machine catalogs or expanding permissions.
+- Added routing scenarios for phase changes, stale handoffs, third-party capabilities, unavailable connectors, and tasks that need no specialist. No runtime watcher or model-context reliability guarantee is introduced.
+
+## 0.8.0 - 2026-10-20 (local iteration; unpublished)
+
+- Added event-driven directory reassessment before output batches, after revision/phase closure, and at materially changed handoff, including crowded child, archive, source, and scratch directories.
+- Added lifecycle classification and proportionate reorganization guidance: preserve current artifact families, required dependencies, frozen identities, successor routes, and move integrity; reuse existing authorization and avoid age/count-based deletion.
+- Connected directory maintenance to the Skill entry, session workflow, architecture, audit guidance, and discoverable workspace templates.
+- Added a dependency-free read-only directory metadata inspector with configurable review signals, explicit exclusions, repository/link boundaries, incomplete-read reporting, and synthetic regression coverage. Counts do not establish redundancy or authorize moves.
+
+## 0.7.0 - 2026-10-08 (local iteration; unpublished)
+
+- Extended `manage-workspace-memory` startup and closure with optional, read-only Git orientation. It records repository roots, branch or detached state, `HEAD`, work-tree status, recent local history, and nested repository boundaries without making Git a prerequisite or performing network or commit operations.
+- Added SemVer 2.0.0 version records that distinguish receiver-facing correction rounds from owner-led workflow iterations, keep review revisions separate from release compatibility, and bind submitted identities to content hashes and Git coordinates.
+- Added dependency-free Git and workspace-version helpers with regression tests, plus public documentation recommending Git for faster recovery and provenance.
+
 ## 0.6.0 - 2026-08-20
 
 - Hardened the four flagship workflows around machine-verifiable release contracts: transactional workspace bootstrap, strict evidence-bundle closure, adversarial DOCX/OpenXML inspection, and confirmatory genotype-imputation benchmark freezing.
@@ -110,3 +138,15 @@
 ## 0.1.0 - 2026-07-28
 
 - Created the initial `rigorous-research-workflow` governance Skill.
+
+### Release documentation preparation (2026-10-20, before publication)
+
+Added scope and task examples, pinned skills.sh setup and removal instructions, dependency guidance, and release notes. The public version remains 1.0.0; documentation preparation alone does not establish release publication or deployment.
+
+### English public documentation (2026-10-21, before the stable release)
+
+Standardized README, installation, release notes, and changelog prose in English. Existing runtime behavior, Skill IDs, and the first-stable 1.0.0 contract are unchanged.
+
+### Community reporting before stable publication
+
+Added a structured bug-report form and completed the contribution guidance for the stable repository.
