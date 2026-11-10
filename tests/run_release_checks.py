@@ -22,6 +22,7 @@ from typing import Any
 EXPECTED_SKILLS = (
     "evidence-traceable-literature-review",
     "reproducible-computational-research",
+    "research-review-panel",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )

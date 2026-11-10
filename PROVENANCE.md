@@ -2,7 +2,7 @@
 
 Maintainer and distribution copyright holder: Ynzuses. License: Apache-2.0, with retained component notices. This 1.0.0 group is an ownership and distribution refactor of maintained methods. It does not adopt third-party Skills as original work or ship private documents, full texts, applicant profiles, machine inventories or development Git history.
 
-Member set: `evidence-traceable-literature-review`, `scientific-writing-and-revision`, `reproducible-computational-research`, `rigorous-research-workflow`. Broader subject lists in the historical provenance below describe earlier method development and reviews, not additional bundled members or runtime dependencies. Original component notices and applicable terms are retained. No new upstream license or market comparison was performed as part of grouping.
+Member set: `evidence-traceable-literature-review`, `scientific-writing-and-revision`, `reproducible-computational-research`, `rigorous-research-workflow`, and, since 1.1.0, `research-review-panel` (its design sources are listed in [Research review panel sources](#research-review-panel-sources)). Broader subject lists in the historical provenance below describe earlier method development and reviews, not additional bundled members or runtime dependencies. Original component notices and applicable terms are retained. No new upstream license or market comparison was performed as part of grouping.
 
 ## Pre-stable provenance record
 
@@ -67,3 +67,22 @@ When official specifications or source practices change:
 4. rerun structural, metadata, trigger, privacy, and forward tests;
 5. redeploy and compare hashes;
 6. record the change in the suite changelog.
+
+## Research review panel sources
+
+`research-review-panel` joined the group in 1.1.0. It generalizes a maintainer practice of sending research documents, analysis decisions, and code to separate reviewers and settling their findings against sources, data, and scripts. Incidents that motivated it were used only to identify transferable rules; no project text, data, reviewer identity, or result is included.
+
+The following public sources informed design choices and were checked on 2026-11-11. No text, prompt, or code was copied.
+
+- Du et al., "Improving Factuality and Reasoning in Language Models through Multiagent Debate" (arXiv:2305.14325, 2023): the multi-agent debate setup that this Skill deliberately narrows.
+- Choi, Zhu and Li, "Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?" (arXiv:2508.17536): majority voting accounts for most of the gain usually credited to debate. This is why exchange between reviewers is optional and bounded.
+- He et al., "Minority Sentinel: When to Overturn Majority Voting in Multi-Agent LLM Debates" (arXiv:2606.29270): because models make correlated errors, majority voting often overrides a correct minority answer. This is why findings are never settled by counting.
+- Bertalanič and Fortuna, "The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate" (arXiv:2605.00914): identical agents debating without assigned roles gained no accuracy over agents correcting themselves alone, at two to three times the token cost. This is why reviewers must differ and receive distinct lenses.
+- Hao et al., "Not All Flips Are Conformity: Decomposing Stance Convergence in Multi-Agent LLM Debate" (arXiv:2606.00820): adopting a peer's answer can fix an error, introduce one, or swap one wrong answer for another, so convergence is not evidence of improvement. This is why a change of position needs a cited reason.
+- Swanson et al., "The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies", Nature (2025): a dedicated critic role alongside specialist agents. This informed the standing opposing reviewer.
+- Claude Code documentation, "Orchestrate teams of Claude Code sessions" (<https://code.claude.com/docs/en/agent-teams>): the competing-hypotheses pattern in which investigators try to disprove each other's theories.
+- LeadDev, "Your AI-coding agents might need an org chart" (2026-08-04): in a reported writer-reviewer test on coding tasks, one model's pass rate fell after another model reviewed its output while the reverse pairing improved. This is why reviews from another model are adjudicated finding by finding.
+
+Two public Skills were compared through their public listings on 2026-11-10; only abstract patterns were considered, neither is a dependency, and neither stated a license on the pages reviewed. `agent-review-panel` (wan-huiyan) uses an independent pass, bounded debate rounds, an alert when position changes lack new evidence, and counts agreement resting on one source as one observation; it requires one model for every reviewer and targets code and plans, whereas this Skill puts model diversity first and targets research artifacts. `academic-paper-reviewer` (Imbad0202) uses reviewer roles with a fixed opposing seat and typed evidence anchors, for manuscripts only.
+
+No evaluation of this Skill's effect on review quality has been run. The cited studies concern question answering and coding benchmarks, not research review; they motivate the rules and do not validate them here.

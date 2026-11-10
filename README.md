@@ -1,10 +1,10 @@
 # Research Skills Suite
 
-Traceable literature evidence, scientific arguments, reproducible computation and coordinated research revisions across disciplines.
+Traceable literature evidence, scientific arguments, reproducible computation, independent multi-reviewer challenge and coordinated research revisions across disciplines.
 
-For researchers who need traceable literature evidence, evidence-calibrated scientific arguments, reproducible computation, or coordinated revisions across linked research outputs. Select a specialist for an ordinary single task; use lifecycle coordination when several artifacts must move together.
+For researchers who need traceable literature evidence, evidence-calibrated scientific arguments, reproducible computation, a pre-submission stress test by independent reviewers, or coordinated revisions across linked research outputs. Select a specialist for an ordinary single task; use lifecycle coordination when several artifacts must move together.
 
-Suite version: `1.0.1`.
+Suite version: `1.1.0`.
 
 ## Project history and current groups
 
@@ -12,14 +12,14 @@ The former all-in-one [v0.6.0 release](https://github.com/Ynzuses/research-skill
 
 | Group | Use it for | Skills | Current release |
 | --- | --- | ---: | --- |
-| [Research](https://github.com/Ynzuses/research-skills-suite) | Literature evidence, scientific writing, reproducible computation and research coordination | 4 | [v1.0.1](https://github.com/Ynzuses/research-skills-suite/releases/tag/v1.0.1) |
+| [Research](https://github.com/Ynzuses/research-skills-suite) | Literature evidence, scientific writing, reproducible computation, independent review and research coordination | 5 | [v1.1.0](https://github.com/Ynzuses/research-skills-suite/releases/tag/v1.1.0) |
 | [Genomics](https://github.com/Ynzuses/genomics-skills-suite) | Genomics study design and genotype-imputation benchmarking | 2 | [v1.0.0](https://github.com/Ynzuses/genomics-skills-suite/releases/tag/v1.0.0) |
-| [Workspace and Git](https://github.com/Ynzuses/workspace-skills-suite) | Project memory, authority, handoffs and consent-based Git closeout | 2 | [v1.0.1](https://github.com/Ynzuses/workspace-skills-suite/releases/tag/v1.0.1) |
+| [Workspace and Git](https://github.com/Ynzuses/workspace-skills-suite) | Project memory, authority, handoffs and consent-based Git closeout | 2 | [v1.1.0](https://github.com/Ynzuses/workspace-skills-suite/releases/tag/v1.1.0) |
 | [Documents and Office](https://github.com/Ynzuses/office-authoring-suite) | Word, PowerPoint, Excel and preservation-sensitive document delivery | 4 | [v1.0.0](https://github.com/Ynzuses/office-authoring-suite/releases/tag/v1.0.0) |
 | [Voice-preserving writing](https://github.com/Ynzuses/voice-preserving-writing) | Drafting, revision and translation grounded in the writer's own material | 1 | [v1.0.0](https://github.com/Ynzuses/voice-preserving-writing/releases/tag/v1.0.0) |
 | [Resumes and CVs](https://github.com/Ynzuses/targeted-resume) | Evidence-based company applications and academic CVs | 1 | [v1.0.0](https://github.com/Ynzuses/targeted-resume/releases/tag/v1.0.0) |
 
-Choose groups by task. This repository installs the four Research members below; the table is navigation across the family, not a combined installation. See [MIGRATION.md](MIGRATION.md) for every former v0.6.0 member's current home, pinned installation links and the additional groups. The legacy tag and downloadable source remain available for reproducibility.
+Choose groups by task. This repository installs the five Research members below; the table is navigation across the family, not a combined installation. See [MIGRATION.md](MIGRATION.md) for every former v0.6.0 member's current home, pinned installation links and the additional groups. The legacy tag and downloadable source remain available for reproducibility.
 
 ## Included Skills
 
@@ -28,6 +28,7 @@ Choose groups by task. This repository installs the four Research members below;
 | [evidence-traceable-literature-review](evidence-traceable-literature-review/SKILL.md) | Reproducible search and screening, primary-source verification, contrary evidence and claim-level citation closure. |
 | [scientific-writing-and-revision](scientific-writing-and-revision/SKILL.md) | Scientific reasoning, evidence-calibrated claims, feedback adjudication and consistency across long and short forms. |
 | [reproducible-computational-research](reproducible-computational-research/SKILL.md) | Local/HPC provenance, environments, checkpoints, reruns and explicit missing, failed and verified-zero states. |
+| [research-review-panel](research-review-panel/SKILL.md) | Challenge a manuscript, review, analysis plan, method decision, scientific code or figure with independent, differing reviewers, then settle each finding against the evidence rather than by vote. New in 1.1.0. |
 | [rigorous-research-workflow](rigorous-research-workflow/SKILL.md) | Coordinate upstream invalidation and lifecycle transitions across linked research artifacts; ordinary single tasks use their specialists. |
 
 ## Install with skills.sh
@@ -35,10 +36,11 @@ Choose groups by task. This repository installs the four Research members below;
 Run this from the project where you want to use the group:
 
 ```sh
-npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.0.1 --skill "*" --agent codex
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.1.0 --skill "*" --agent codex
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.1.0 --skill "*" --agent claude-code
 ```
 
-This selects every member for Codex and defaults to the current project. Add `--list` to inspect available members or `--global` for user-wide installation. Use `--skill <skill-name>` to select one member, or choose another supported target such as `--agent claude-code`. Keep the first installation interactive so you can review its destination. Use `--copy` if symbolic links are unavailable.
+Each line selects every member for one agent (Codex or Claude Code) and defaults to the current project. Add `--list` to inspect available members or `--global` for user-wide installation. Use `--skill <skill-name>` to select one member, or choose another supported target such as `--agent claude-code`. Keep the first installation interactive so you can review its destination. Use `--copy` if symbolic links are unavailable.
 
 See **[INSTALL.md](INSTALL.md)** for prerequisites, pinned versions, individual installation, discovery paths, dependencies, updates, and removal. Verify discovery and an actual invocation in the target agent after installing the files.
 
@@ -48,7 +50,9 @@ See **[INSTALL.md](INSTALL.md)** for prerequisites, pinned versions, individual 
 
 > Use $reproducible-computational-research to audit this workflow's environment, input provenance, checkpoints, and missing or failed results.
 
-These are requests to an agent. Codex supports explicit `$skill-name` invocation; other agents use their own invocation interface.
+> Use $research-review-panel to stress-test this analysis plan with independent reviewers before we lock the data split, and settle each finding against the plan and the data.
+
+These are requests to an agent. Codex supports explicit `$skill-name` invocation; Claude Code invokes a Skill by name through its Skill tool or `/skill-name`; other agents use their own invocation interface.
 
 ## Requirements and scope
 

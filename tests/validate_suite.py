@@ -25,6 +25,7 @@ from urllib.parse import unquote, urlsplit
 EXPECTED_SKILLS = (
     "evidence-traceable-literature-review",
     "reproducible-computational-research",
+    "research-review-panel",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )
@@ -315,7 +316,7 @@ def detect_layout(root: Path, scan: Scan, failures: list[str]) -> Layout | None:
         return None
     if found != EXPECTED_SKILL_SET:
         failures.append(
-            "layout must contain exactly 4 declared Skills; "
+            "layout must contain exactly 5 declared Skills; "
             f"missing={sorted(EXPECTED_SKILL_SET - found)}, "
             f"extra={sorted(found - EXPECTED_SKILL_SET)}"
         )
@@ -552,7 +553,7 @@ def check_skills(
                 )
     if names != EXPECTED_SKILL_SET:
         failures.append(
-            "parsed Skill names do not equal the declared 4-Skill set: "
+            "parsed Skill names do not equal the declared 5-Skill set: "
             f"{sorted(names)}"
         )
     return names
@@ -917,7 +918,7 @@ def check_public_metadata(
         failures.append("RELEASE_MANIFEST version does not match VERSION")
     if release.get("skills") != list(EXPECTED_SKILLS):
         failures.append(
-            "RELEASE_MANIFEST skills must be the sorted declared 4-Skill set"
+            "RELEASE_MANIFEST skills must be the sorted declared 5-Skill set"
         )
     if release.get("license") != plugin.get("license"):
         failures.append("RELEASE_MANIFEST license does not match plugin.json")

@@ -100,7 +100,7 @@ class ValidateSuiteTests(unittest.TestCase):
             )
             completed = validate(root)
             self.assertEqual(completed.returncode, 1)
-            self.assertIn("exactly 4 declared Skills", completed.stdout)
+            self.assertIn("exactly 5 declared Skills", completed.stdout)
 
     def test_commented_openai_fields_cannot_spoof_policy(self) -> None:
         with cloned_source() as (_base, root):

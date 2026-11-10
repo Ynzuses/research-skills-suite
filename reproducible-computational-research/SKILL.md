@@ -2,7 +2,7 @@
 name: reproducible-computational-research
 description: "Design, diagnose, and hand off reproducible local or HPC research workflows. Use when a task needs provenance, environments, parallel tasks, checkpoints, idempotent reruns, missing-versus-zero results, scheduler failures, single-source outputs, artifact audits, or public-code boundaries. Do not use for ordinary application debugging."
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # Reproducible Computational Research

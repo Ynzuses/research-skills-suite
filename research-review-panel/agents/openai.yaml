@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research Review Panel"
+  short_description: "Independent reviewers, evidence-based adjudication"
+  default_prompt: "Use $research-review-panel to challenge this research artifact with independent reviewers and settle each finding against the evidence."
+policy:
+  allow_implicit_invocation: true

@@ -1,12 +1,13 @@
 {
   "schema_version": "1.0",
   "group": "research-skills-suite",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "skills": [
     "evidence-traceable-literature-review",
     "scientific-writing-and-revision",
     "reproducible-computational-research",
-    "rigorous-research-workflow"
+    "rigorous-research-workflow",
+    "research-review-panel"
   ],
   "layout": "flat-skill-group",
   "license": "Apache-2.0",

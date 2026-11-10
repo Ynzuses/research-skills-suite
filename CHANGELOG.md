@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 - 2026-11-11
+
+Added a fifth member, `research-review-panel`: several independent, deliberately different reviewers challenge a research artifact (manuscript, review, analysis plan, statistical or method decision, scientific code, or figure) before it is submitted, frozen, or acted on; each finding is located and settled against the evidence, never by counting reviewers, and one writer applies the accepted repairs. It includes panel design by artifact type, an adjudication reference, a reviewer brief, and a findings ledger template. Also added two independence mechanisms to `evidence-traceable-literature-review`. Screening can run as two or more passes that cannot see each other's decisions, with only disagreeing or low-confidence records sent to adjudication and per-pass decisions kept in a companion table. Material claims can be rechecked before circulation by a verifier that did not draft them; its outcomes map onto the existing direction and strength fields, an unchecked claim is never counted as supported, and a non-supporting outcome is confirmed at the source before the document changes. Added an optional reference-manager route: a per-task rule for when a review passes through a reference library, with the ledgers and hash-bound full-text package kept authoritative and the library treated as a mirror. The other three earlier members are unchanged apart from their version. Compatible addition: no existing member, bundle schema, validator or CLI changed; the suite's static validator, exporter and release checks now expect five members.
+
 ## 1.0.1 - 2026-10-21
 
 Connected the legacy all-in-one release to the six maintained groups through linked family navigation, an exact eight-member migration map and fixed-tag installation guidance. Clarified which methods were added later. Preserved released tags and package bytes; no runtime, schema or member changes.

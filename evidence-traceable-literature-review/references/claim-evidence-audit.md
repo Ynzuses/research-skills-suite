@@ -54,6 +54,28 @@ Document the search space and exact terms. Use “not identified in this search�
 - Indirect analogy supports a hypothesis, not an established effect.
 - Conflicting studies require conditions and uncertainty, not majority voting alone.
 
+## Independent Verification Pass
+
+The reader who wrote a sentence tends to find its support in the source. Before a review is circulated, have each material claim checked by a verifier that did not draft it.
+
+- Give the verifier the claim as worded in the document, the cited source's full text, and the locator if one is recorded. Withhold the drafting notes and the author's reasoning.
+- The verifier searches the full text and supplements itself and returns one outcome per claim-source pair, using the ledger's existing fields:
+
+| Outcome | Direction | Strength | What the verifier must return |
+| --- | --- | --- | --- |
+| Supported as worded | supports | direct | locator and a short paraphrase of the passage |
+| Supported only in part, or under narrower conditions | limits | direct or indirect | locator, and which part of the wording exceeds the source |
+| Contradicted | contradicts | direct | locator of the conflicting passage |
+| Not found in the source | does not address | insufficient | the terms and sections searched |
+| Could not be checked | leave unchanged | leave unchanged | the reason, such as no full text, an unreadable file, or a missing supplement |
+
+- “Could not be checked” is not support. The claim keeps its earlier status and stays on the open list until someone reads the source.
+- A verifier's outcome is a finding to confirm, not a ruling. For every outcome other than full support, open the source at the returned locator before changing the document. A verifier can misread a table or miss a supplement as easily as an author can.
+- Repair the wording, replace the source, or remove the claim, then recheck the short forms that repeat it: abstract, table, conclusion, and summary.
+- When the same kind of mismatch appears in several claims, treat it as a pattern and recheck the remaining claims of that kind.
+
+A verifier from a different model family adds the most independence. If task content would leave the machine to reach it, apply the workspace's privacy rule to the claim text and to the source before sending either.
+
 ## Full-Text Identity Check
 
 Before linking a PDF or XML to a citation, confirm title, authors, journal or venue, year, stable identifier, version, and page or article number. Check that a commentary or perspective has not replaced the original study and that a preprint has not silently replaced a materially different final article.

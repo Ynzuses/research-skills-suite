@@ -167,7 +167,7 @@ class ExportReleaseCandidateTests(unittest.TestCase):
                 path.parent.name
                 for path in (target / "skills").glob("*/SKILL.md")
             }
-            self.assertEqual(len(skills), 4)
+            self.assertEqual(len(skills), 5)
             self.assertFalse((target / "PLUGIN_RELEASE.md").exists())
             self.assertFalse((target / ".git").exists())
             for name in (

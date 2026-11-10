@@ -60,6 +60,26 @@ For a deliverable source folder:
 - record hard links or shared truth files so they are not mistaken for independent copies;
 - disclose unavailable full text rather than inserting an unverified substitute.
 
+## Reference-Manager Route (Optional)
+
+A reference manager adds a browsable, shareable library and formatted bibliographies. It also adds a second place where source identities live. Decide per task whether the review passes through it, and record the choice with the review contract.
+
+| The task | Route |
+| --- | --- |
+| must hand over the sources themselves, will be shared with readers who browse or reuse the library, or will be revised over several rounds with a changing bibliography | through the reference manager |
+| needs only the result, is short-lived, or cites a handful of sources | ledgers and the full-text folder only |
+
+When the route is used:
+
+- **One authority per fact.** The evidence ledgers and the hash-bound full-text package stay authoritative for which sources support which claims and for the delivered files. The library is a mirror for browsing, sharing and formatting. State the synchronization direction, normally from the verified package into the library.
+- **Enter only verified sources.** Add an item after its identity check, by stable identifier where one exists, and attach the same file whose hash the source manifest records. Do not let an automatic metadata lookup or an automatically fetched file replace a verified identity; compare title, authors, year, venue and version after import.
+- **Keep keys in the ledger.** Record each item's library key beside its source ID so the two can be reconciled. One collection per review, named for it.
+- **Mind what synchronizes.** A library that syncs to a hosted service or a group sends item data, notes and possibly files there. Keep unpublished reasoning, drafting notes and restricted material in the workspace, not in library notes, and check the publisher's terms before placing full texts in a shared library.
+- **Generate, then verify.** A bibliography formatted from the library still goes through the citation-order and metadata checks above. A style file encodes a standard's rules imperfectly; compare a sample of each source type with the standard the venue requires.
+- **Reconcile before handoff.** The collection's items, the reference list and the full-text package must agree one-to-one; report any item present in one and missing from another.
+
+When the route is not used, nothing is lost: the ledgers and package already satisfy the evidence contract. Do not import sources into a library only because the tool is available.
+
 ## Delivery Checklist
 
 - Search log and screening boundary are present.

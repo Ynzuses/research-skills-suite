@@ -69,6 +69,18 @@ Record one row per candidate with:
 
 Use consistent reason codes such as wrong population, wrong outcome, no original data, inaccessible full text, superseded version, duplicate study, implementation-only record, or out of scope. Do not discard a difficult or contrary paper under a vague “irrelevant” label.
 
+## Independent Screening Passes
+
+One screening pass by one reader fails silently: a borderline record that is excluded leaves no trace that it was borderline. When a wrong exclusion would be costly, for example in a novelty claim, a method comparison, or a review that others will rely on, screen the same candidates in at least two passes that cannot see each other's decisions.
+
+- Give every pass the same written criteria and the same record fields. Do not give it another pass's decisions or reasons.
+- Make the passes differ where the host allows: a different model family first, then a different reader role or a criteria-first versus title-first reading order. Two runs of one model with one prompt are a weak second opinion.
+- Each pass returns a decision, a reason code, and a confidence for every record.
+- Records on which the passes agree keep that decision. A record with any disagreement, or with low confidence in either pass, goes to adjudication: read the abstract or full text against the criteria, or ask the person who owns the question. Do not settle it by counting passes.
+- Report how many records were screened, how many disagreed, and how each disagreement was resolved. A high disagreement rate means the criteria are unclear; revise them and rescreen instead of adjudicating record by record.
+
+The screening ledger keeps one adjudicated decision per record. Keep the per-pass decisions in a companion table beside it, keyed by the same record ID, so the ledger schema stays unchanged. Independent passes reduce missed inclusions; they do not verify what an included paper says.
+
 ## Negative and Contrary Evidence
 
 Maintain an explicit list of searches and studies that did not support the preferred account. Distinguish:

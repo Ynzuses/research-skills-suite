@@ -2,7 +2,7 @@
 name: rigorous-research-workflow
 description: "Govern linked research artifacts when lifecycle state, upstream invalidation, frozen baselines, or release decisions must be coordinated across design, evidence, writing, delivery, or public release. Use when a task needs traceable change propagation or multi-artifact transition gates; let specialist skills handle ordinary combinations. Do not use for a single review, draft, document edit, analysis, citation, or routine debugging."
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # Rigorous Research Workflow
@@ -30,10 +30,11 @@ Classify the request before acting:
 - **Content-to-delivery, submitted baseline, or revision-round handoff:** read [review-and-delivery.md](references/review-and-delivery.md).
 - **Reusable methods, public examples, skill packaging, or release preparation:** read [public-release-and-privacy.md](references/public-release-and-privacy.md).
 - **Cross-session workspace continuity, memory routing, or indexed handoff:** compose with `manage-workspace-memory`; let that skill own the memory architecture and lifecycle.
+- **Independent multi-reviewer challenge before a freeze, submission, or costly decision:** compose with `research-review-panel`; it owns the panel and adjudication, while this Skill records which artifacts the accepted findings invalidate and gates the transition.
 
 Read every interface that applies. Use specialized search, citation, statistics, visualization, Word, PDF, or domain skills for operations this Skill does not implement.
 
-Prefer specialized Skills for execution and ordinary adjacent handoffs. The four members of Research Skills Suite cover general scientific work. Genomics, document engineering, and workspace-memory Skills are optional companions from separate groups; their examples do not make those groups mandatory or genomic study a default. Use an available equivalent or a bounded direct implementation when a named companion is absent. Use this Skill as the governing layer only when the task satisfies the Trigger Gate above.
+Prefer specialized Skills for execution and ordinary adjacent handoffs. The five members of Research Skills Suite cover general scientific work. Genomics, document engineering, and workspace-memory Skills are optional companions from separate groups; their examples do not make those groups mandatory or genomic study a default. Use an available equivalent or a bounded direct implementation when a named companion is absent. Use this Skill as the governing layer only when the task satisfies the Trigger Gate above.
 
 ## Compose with Specialized Skills
 

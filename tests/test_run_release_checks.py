@@ -16,6 +16,7 @@ RUNNER = HERE / "run_release_checks.py"
 SKILLS = (
     "evidence-traceable-literature-review",
     "reproducible-computational-research",
+    "research-review-panel",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )

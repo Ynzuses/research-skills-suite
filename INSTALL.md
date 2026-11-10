@@ -1,8 +1,8 @@
 # Research Skills Suite: installation and deployment
 
-This guide uses the Vercel `skills` CLI behind [skills.sh](https://skills.sh/docs/cli). Commands pin the installer to `skills@1.7.4`; the product tag is `v1.0.1`. These are independent versions. The tagged repository and release ZIP are alternative installation sources.
+This guide uses the Vercel `skills` CLI behind [skills.sh](https://skills.sh/docs/cli). Commands pin the installer to `skills@1.7.4`; the product tag is `v1.1.0`. These are independent versions. The tagged repository and release ZIP are alternative installation sources.
 
-Upgrading from the former all-in-one v0.6.0 release? Read the [member-to-group migration map](MIGRATION.md) first; the current Research group contains four members.
+Upgrading from the former all-in-one v0.6.0 release? Read the [member-to-group migration map](MIGRATION.md) first; the current Research group contains five members.
 
 ## 1. Prepare the environment and inspect existing installations
 
@@ -21,20 +21,22 @@ The first npx run may ask to download the CLI. Inspect existing Skills with the 
 ## 2. Inspect members, then install
 
 ```sh
-npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.0.1 --list
-npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.0.1 --skill "*" --agent codex
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.1.0 --list
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.1.0 --skill "*" --agent codex
 ```
 
-Expect **4** members: `evidence-traceable-literature-review`, `scientific-writing-and-revision`, `reproducible-computational-research`, `rigorous-research-workflow`. `--skill "*"` selects this group's members. Avoid `--all` here because it also selects all agents. Review the destination and installation method in the interactive prompts.
+For Claude Code, use `--agent claude-code` instead of `--agent codex`; the destinations are listed in the table below.
+
+Expect **5** members: `evidence-traceable-literature-review`, `scientific-writing-and-revision`, `reproducible-computational-research`, `rigorous-research-workflow`, `research-review-panel`. `--skill "*"` selects this group's members. Avoid `--all` here because it also selects all agents. Review the destination and installation method in the interactive prompts.
 
 To select one member or install the group for your user account:
 
 ```sh
-npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.0.1 --skill evidence-traceable-literature-review --agent codex
-npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.0.1 --skill "*" --agent codex --global
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.1.0 --skill evidence-traceable-literature-review --agent codex
+npx skills@1.7.4 add https://github.com/Ynzuses/research-skills-suite/tree/v1.1.0 --skill "*" --agent codex --global
 ```
 
-`--global` makes the installation available across projects; omitting it selects the current project. Keep double quotes around the star in PowerShell and common Unix shells. `/tree/v1.0.1` selects the Git tag. Do not append `@1.0.1` to a repository shorthand to mean a product version: the CLI also uses `@` to select a Skill.
+`--global` makes the installation available across projects; omitting it selects the current project. Keep double quotes around the star in PowerShell and common Unix shells. `/tree/v1.1.0` selects the Git tag. Do not append `@1.1.0` to a repository shorthand to mean a product version: the CLI also uses `@` to select a Skill.
 
 ## 3. Choose an agent and installation method
 
@@ -49,7 +51,7 @@ The CLI supports symbolic links and copies. Add `--copy` when links are unavaila
 
 ## 4. Use a release ZIP or local checkout
 
-Download `research-skills-suite-1.0.1.zip`, verify it against the companion `.sha256` file, and extract it. A complete checkout of the fixed tag also works. Install the member directories rather than treating the whole repository as one Skill. Replace this example with the actual extracted group directory:
+Download `research-skills-suite-1.1.0.zip`, verify it against the companion `.sha256` file, and extract it. A complete checkout of the fixed tag also works. Install the member directories rather than treating the whole repository as one Skill. Replace this example with the actual extracted group directory:
 
 ```sh
 npx skills@1.7.4 add "./research-skills-suite" --list
@@ -72,7 +74,7 @@ The CLI installs member directories. It does not run pip, install Office, connec
 npx skills@1.7.4 list --agent codex
 ```
 
-Add `--global` for a user-wide installation. Then inspect the target agent's available Skills and explicitly invoke `$evidence-traceable-literature-review` for a small task without external side effects. Confirm that the agent read the expected `SKILL.md`. Codex detects Skill changes; refresh or restart according to the host's instructions if an entry does not appear. Installer output does not prove agent discovery or correct workflow behavior.
+Add `--global` for a user-wide installation. Then inspect the target agent's available Skills and explicitly invoke `$evidence-traceable-literature-review` for a small task without external side effects. In Claude Code, invoke it by name (for example `/evidence-traceable-literature-review`) or ask for the task and check that the Skill was loaded. Confirm that the agent read the expected `SKILL.md`. Codex detects Skill changes; for other hosts, refresh or restart according to the host's instructions if an entry does not appear. Installer output does not prove agent discovery or correct workflow behavior.
 
 If an entry is missing, inspect scope, working directory, agent selection, complete files, and duplicate legacy entries. Review project-level `.agents/skills` changes before sharing them. Keep personal runtime directories and credentials out of public repositories.
 

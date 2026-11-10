@@ -22,6 +22,7 @@ from urllib.parse import urlsplit
 EXPECTED_SKILLS = (
     "evidence-traceable-literature-review",
     "reproducible-computational-research",
+    "research-review-panel",
     "rigorous-research-workflow",
     "scientific-writing-and-revision",
 )
@@ -523,7 +524,7 @@ def validate_source(
                 found.add(entry.name)
     if found != expected:
         raise ExportError(
-            "flat source must contain exactly the declared 4 Skills; "
+            "flat source must contain exactly the declared 5 Skills; "
             f"missing={sorted(expected - found)}, extra={sorted(found - expected)}"
         )
 

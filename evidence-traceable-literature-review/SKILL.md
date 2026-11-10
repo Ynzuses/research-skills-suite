@@ -2,7 +2,7 @@
 name: evidence-traceable-literature-review
 description: "Build and audit evidence-traceable literature reviews and source packages. Use when a task needs multi-source discovery plus screening, primary-full-text verification, claim-to-source matrices, contrary evidence, novelty or citation-delta audits, bibliography changes, or review synthesis. Compose with search, citation, database, and PDF skills. Do not use for one DOI, a routine fact, or prose-only editing."
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # Evidence-Traceable Literature Review
@@ -60,6 +60,8 @@ Use multiple sources when one database cannot cover the field. Save the exact qu
 
 Apply inclusion and exclusion criteria consistently. Retain a record of excluded near-matches and why they were excluded. Preserve negative and contrary evidence rather than silently dropping it because it complicates the narrative.
 
+When a wrong exclusion would be costly, screen in two or more passes that cannot see each other's decisions and adjudicate only the records on which they disagree; see [Independent Screening Passes](references/search-and-screening.md#independent-screening-passes).
+
 ### 4. Retrieve the Strongest Available Source
 
 For consequential claims, prefer the original article and its supplementary files. Abstracts, reviews, repository pages, database records, and search snippets are discovery aids unless the claim is limited to metadata they directly establish.
@@ -70,7 +72,7 @@ Verify that the file is the intended article, version, year, title, and evidence
 
 For each material source, capture the exact contribution, design, sample or dataset, metric definition, result, limitation, and intended use in the review. Link important claims to page, section, table, figure, or supplementary locator.
 
-Read [claim-evidence-audit.md](references/claim-evidence-audit.md) for verification rules and the evidence-ledger schema.
+Read [claim-evidence-audit.md](references/claim-evidence-audit.md) for verification rules and the evidence-ledger schema. Before circulation, have material claims rechecked by a verifier that did not draft them, as described in its [Independent Verification Pass](references/claim-evidence-audit.md#independent-verification-pass).
 
 Use the optional machine-readable templates in `assets/` for a durable bundle:
 
@@ -105,7 +107,7 @@ For numbered styles, assign numbers by first appearance only after the narrative
 
 After the last pruning or renumbering pass, inspect the actual handoff directory: compare the current bibliography against the validated mapping, recompute file hashes, parse every delivered full text, and exclude placeholders, temporary files, and background sources from the reader-facing package.
 
-Read [synthesis-and-delivery.md](references/synthesis-and-delivery.md) for synthesis structure, reference renumbering, and full-text package checks.
+Read [synthesis-and-delivery.md](references/synthesis-and-delivery.md) for synthesis structure, reference renumbering, and full-text package checks. Decide at the start of a review whether it passes through a reference manager: use one when the sources themselves are a deliverable, the library will be shared, or the bibliography will change over several rounds, and skip it for short result-only tasks. The same reference describes the [route and its authority rules](references/synthesis-and-delivery.md#reference-manager-route-optional).
 Read [citation-delta-audit.md](references/citation-delta-audit.md) whenever a passage or source is deleted, merged, replaced, newly added, or moved. Audit source roles and claim support before treating the revised bibliography as complete.
 
 ### 8. Audit Before Handoff

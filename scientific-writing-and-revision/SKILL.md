@@ -2,7 +2,7 @@
 name: scientific-writing-and-revision
 description: "Draft or revise evidence-calibrated scientific arguments. Use for manuscripts, reviews, abstracts, reports, scientific translation, or feedback rounds when purpose, reader order, evidence strength, epistemic status, feedback generalization, or consistency across prose, tables, conclusions, and summaries matters. Compose with evidence and delivery skills as needed. Do not use for routine spelling, general translation, formatting-only work, or citation lookup."
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # Scientific Writing and Revision
@@ -34,6 +34,7 @@ Route by event rather than by a generic request to “help write”:
 - use citation metadata tools for DOI and bibliography identity only;
 - call the relevant domain Skill for specialist scientific or methodological judgment;
 - call `research-document-delivery` when touching DOCX/PDF, review markup, cross-format synchronization, package structure, or authoritative rendering;
+- call `research-review-panel` when a manuscript, review, or report needs a pre-submission stress test by several independent reviewers or a second opinion from another model, or when earlier reviews conflict; this Skill then applies the accepted repairs as their single writer;
 - call `rigorous-research-workflow` only when an upstream authority change invalidates multiple linked artifacts, exact lifecycle state must be governed, or the work needs a frozen-baseline or release transition; ordinary evidence-to-prose and prose-to-DOCX handoffs compose directly with their specialists;
 - call `manage-workspace-memory` when purpose, authority, decision, blocker, or next action must persist across sessions.
 
